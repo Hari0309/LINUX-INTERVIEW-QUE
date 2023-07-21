@@ -1,1 +1,138 @@
 
+  Q1) How do you call a web service from Linux command line?
+
+ A= cURL is a versatile command-line tool used to transfer data with various protocols, including HTTP, HTTPS, FTP, etc. 
+    It's commonly used for making HTTP requests to web services. 
+
+Q2) What is the Linux command to check how much space is filled/remaining in a filesystem?
+ 
+A=  To check how much space is filled and how much space is remaining in a filesystem on Linux, you can use the df (disk free) command.
+    This command displays information about the disk space usage of mounted filesystems.
+
+   Q3) How do you find top 5 large files when your file system is full?
+
+   A= sudo find / -type f -exec du -h {} + | sort -rh | head -n 5
+
+   Q4) How would you change to one directory above the current working directory?
+
+   Q5) How to check if a remote host is up and running?
+ 
+  A= ping [options] host_or_ip_address
+
+   Q6) How to check if an application listening on port 8080 is up?
+  
+   A= telnet host_or_ip_address 8080
+
+  Q7) How do you go from one host to another in Linux network?
+
+  A=  ssh username@remote_host
+
+ Q8) How do you make a file read only in Linux?
+
+  Q9) How do you kill a process in Linux?
+
+  A= kill PID
+
+ Q10) How do you redirect output of a command to a file?
+ 
+A= echo "Hello, World!" > output.txt
+
+  Q11) What is difference between < and << in Linux?
+
+  Q12) What are different places which can be used to convert IP address to hostname or vice versa? 
+
+  Q13)  What is inode?
+
+  Q14)  What is a shell?
+
+  Q15) What is difference between hard link and soft link?
+ 
+  A hard link is essentially another name for the same file. It points directly to the same data on disk as the original file. 
+   Both the original file and the hard link share the same inode, which contains metadata and the actual data of the file.
+
+Since hard links point directly to the same data, changes made to one hard link will affect all other hard links and the original file. 
+All hard links are equivalent and have the same permissions and ownership.
+
+Hard links can only be created within the same file system because they reference the same inode. 
+You cannot create a hard link across different partitions or file systems.
+
+Hard links do not require any additional disk space, as they share the same data block with the original file.
+When you delete a hard link, it only removes one link to the file. The actual file data remains intact until all hard links and the original file are deleted.
+
+                    SOFTLINK
+A soft link is a separate file that contains the path to the target file or directory. 
+It points to the target file or directory by its path name rather than directly to the inode.
+
+Soft links are independent files with their own inodes. They have different permissions and ownership from the target file.
+
+Soft links can be created across different file systems since they reference the target by its path.
+
+Soft links occupy additional disk space to store the path to the target file or directory.
+If you delete a soft link, it only removes the link itself, not the target file or directory. The target file or directory remains unaffected.
+ 
+
+ Q16) how do you find who else is logged into a server?
+
+ A= who
+
+  Q17) Can you write down a crontab entry to run from Monday to Friday at 0500, to delete all files from /tmp directory, recursively?
+
+A= crontab -e
+            0 5 * * 1-5 find /tmp -type f -delete
+
+  Q18) How do you find top 5 file or directory which is taking most of the space in a file system?
+
+A= find / -type f -exec du -h {} + | sort -rh | head -n 5
+
+ Q19) How do you convert hostname to IP address in Linux?
+
+ A= ping -c 1 hostname
+
+ Q20) What is GRUB?
+
+A = GRUB, which stands for Grand Unified Bootloader, is a widely used and popular boot loader for Linux and other Unix-like operating systems. 
+It plays a crucial role during the system boot process, as it is responsible for loading the operating system kernel into memory 
+ and initiating the boot process.
+
+  Q21)  What is the Root Account?
+
+ Q22)  What is an Alias?
+ 
+  A= alias alias_name='command_or_commands'
+ 
+ Q23) Check How Long the Linux System Has Been Running?
+
+  A = uptime
+
+ Q24)  What is the maximum length for a file name in Linux?
+
+A= In Linux, the maximum length for a file name depends on the file system being used. 
+Different file systems have different limitations on file name lengths. 
+Here are some common file systems and their maximum file name lengths:
+
+ Q25) Tell us the difference between Telnet and SSH?
+
+A= Telnet: Telnet is an unencrypted protocol, which means that all communication, including usernames, passwords, and data, is transmitted
+ in clear text. As a result, Telnet is highly vulnerable to eavesdropping and man-in-the-middle attacks, making it a security risk.
+
+SSH: SSH (Secure Shell) is a secure and encrypted protocol. 
+It uses strong encryption to protect data during transmission, including login credentials and other sensitive information. 
+SSH ensures secure communication and is considered much safer than Telnet.
+
+ Q26) You want to send a message to all connected users as “Server is going down for maintenance”, what will you do?
+
+ A= echo "Server is going down for maintenance" | wall
+ 
+ Q27)  How to reduce or shrink the size of LVM partition?
+
+ A= sudo umount /path/to/mount_point
+
+Q28)  What is the role of case sensitivity in affecting the way commands are used?
+
+
+                          ANSIBLE DOUBT 
+                          
+1) ANSIBLE MOIDULES, 
+ANSIBLE FIREWALL MODULE WORK.
+
+     
